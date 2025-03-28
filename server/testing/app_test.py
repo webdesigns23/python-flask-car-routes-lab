@@ -27,5 +27,7 @@ class TestApp:
         assert(response.data.decode() == 'Flatiron Crossroads is in our fleet!')
     
     def test_model_failure_text(self):
+        '''displays failure text of '/<model> route in browser.'''
+
         response = app.test_client().get('/realCar')
         assert(response.data.decode() == 'No models called realCar exists in our catalog')
