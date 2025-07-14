@@ -9,7 +9,7 @@ def index():
 
 @app.route('/<string:model>')
 def model(model):
-	if model.lower() in existing_models:
+	if model() in existing_models:
 		return f"Flatiron {model} is in our fleet!"
 	else:
 		return f"No models called {model} exists in our catalog"
