@@ -9,7 +9,9 @@ def index():
 
 @app.route('/<string:model>')
 def model(model):
-	if model.lower() in existing_models:
+	model_lower = model.lower()
+	existing_models_lower = [model.lower() for model in existing_models]
+	if model_lower in existing_models_lower:
 		return f"Flatiron {model.capitalize()} is in our fleet!"
 	else:
 		return f"No models called {model} exists in our catalog"
